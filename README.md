@@ -1,1 +1,1 @@
-#Github Fluency Repo
+This is for learning Git step by step.
