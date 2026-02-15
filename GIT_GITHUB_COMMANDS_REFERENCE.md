@@ -257,6 +257,240 @@ This file contains the commands we used during your end-to-end Git and GitHub le
 - `cd /`  
   Go to filesystem root directory.
 
+## 12) Top 15 Daily Shortcuts
+
+- `git st`  
+  Common alias for `git status` (if alias configured).
+
+- `git status -sb`  
+  Short branch-aware status view.
+
+- `git add -A && git commit -m "message"`  
+  Stage everything and commit in one line.
+
+- `git commit -am "message"`  
+  Commit tracked file changes in one step (does not include new files).
+
+- `git commit --amend --no-edit`  
+  Add latest staged changes to previous commit without changing its message.
+
+- `git commit --amend -m "new message"`  
+  Fix previous commit message (and include staged changes if present).
+
+- `git checkout -- <file>`  
+  Old shortcut to discard file changes (modern form: `git restore <file>`).
+
+- `git restore .`  
+  Discard all unstaged changes in current folder tree.
+
+- `git log --oneline --graph --decorate -n 10`  
+  Quick history view with branch pointers.
+
+- `git switch -c feature/<name>`  
+  Create and move to a new feature branch in one command.
+
+- `git push -u origin <branch>`  
+  First push and set upstream so later `git push` works directly.
+
+- `git pull --rebase`  
+  Pull while keeping linear history (replays local commits on top).
+
+- `git fetch --all --prune`  
+  Update remote refs and remove stale deleted branches.
+
+- `git branch -d <branch>`  
+  Delete merged local branch quickly.
+
+- `git stash -u`  
+  Stash tracked and untracked working changes quickly.
+
+## 13) History Search and Inspection
+
+- `git log --oneline --all --decorate --graph`  
+  Full branch graph view.
+
+- `git log -- <file>`  
+  Show commit history for a specific file.
+
+- `git log -p -- <file>`  
+  Show file history with patches.
+
+- `git log --follow -- <file>`  
+  Follow file history across renames.
+
+- `git show <commit-hash>`  
+  Show details and patch for a commit.
+
+- `git show <commit-hash>:<path/to/file>`  
+  Show file content from a past commit.
+
+- `git diff <commit1> <commit2>`  
+  Compare two commits.
+
+- `git diff <commit1>..<commit2> -- <file>`  
+  Compare one file between two commits.
+
+- `git log -S "text" -- <file>`  
+  Find commits where exact text count changed (pickaxe search).
+
+- `git log -G "regex" -- <file>`  
+  Find commits where diff lines match a regex pattern.
+
+- `git grep "pattern"`  
+  Search current repository content quickly.
+
+- `git shortlog -sn`  
+  Contributor commit summary by author.
+
+## 14) Deep Debugging and Root-Cause Commands
+
+- `git blame <file>`  
+  Show who last changed each line.
+
+- `git blame -L <start>,<end> <file>`  
+  Blame a specific line range only.
+
+- `git bisect start`  
+  Start binary search for bug-introducing commit.
+
+- `git bisect bad`  
+  Mark current commit as bad.
+
+- `git bisect good <commit-hash>`  
+  Mark known good commit.
+
+- `git bisect run <test-command>`  
+  Automate bisect with a test command.
+
+- `git bisect reset`  
+  Exit bisect and return to original HEAD.
+
+- `git range-diff <base>...<old-branch> <base>...<new-branch>`  
+  Compare two versions of a branch series (very useful after rebase).
+
+## 15) History Surgery and Recovery (Advanced)
+
+- `git rebase -i HEAD~<n>`  
+  Interactive rebase to squash/reword/reorder recent commits.
+
+- `git rebase --continue`  
+  Continue rebase after resolving conflicts.
+
+- `git rebase --abort`  
+  Cancel rebase and return to pre-rebase state.
+
+- `git rebase --skip`  
+  Skip current patch during rebase.
+
+- `git cherry-pick -x <commit-hash>`  
+  Copy a commit and append source hash note.
+
+- `git cherry-pick --continue`  
+  Continue cherry-pick after resolving conflicts.
+
+- `git cherry-pick --abort`  
+  Abort in-progress cherry-pick.
+
+- `git merge --abort`  
+  Abort in-progress merge conflict state.
+
+- `git reset --hard ORIG_HEAD`  
+  Return to state before last dangerous operation (when available).
+
+- `git reflog --date=local`  
+  View local HEAD movement timeline with timestamps.
+
+- `git fsck --lost-found`  
+  Find dangling objects/commits for last-resort recovery.
+
+## 16) Branch, Cleanup, and Multi-Worktree
+
+- `git branch -vv`  
+  Show branch tracking and latest commit summary.
+
+- `git branch --merged`  
+  List branches already merged into current branch.
+
+- `git branch --no-merged`  
+  List branches not yet merged.
+
+- `git fetch --all --prune`  
+  Refresh all remotes and remove stale remote refs.
+
+- `git remote prune origin`  
+  Remove stale remote-tracking refs for origin.
+
+- `git clean -n`  
+  Dry-run untracked file cleanup.
+
+- `git clean -fd`  
+  Delete untracked files and directories.
+
+- `git clean -fdx`  
+  Delete untracked files including ignored files (careful).
+
+- `git worktree list`  
+  List all linked working trees.
+
+- `git worktree add ../repo-hotfix -b hotfix/<name> main`  
+  Create separate working tree on new hotfix branch.
+
+- `git worktree remove ../repo-hotfix`  
+  Remove linked worktree.
+
+## 17) GitHub CLI: PR, Actions, Releases, and Repo Admin
+
+- `gh pr status`  
+  Show your current PR status overview.
+
+- `gh pr checks <pr-number>`  
+  Show CI checks for a pull request.
+
+- `gh pr checkout <pr-number>`  
+  Check out a PR branch locally.
+
+- `gh pr ready <pr-number>`  
+  Mark draft PR as ready for review.
+
+- `gh pr merge <pr-number> --squash --delete-branch`  
+  Merge PR with squash and delete branch.
+
+- `gh run list`  
+  List GitHub Actions workflow runs.
+
+- `gh run view <run-id>`  
+  Show details for one workflow run.
+
+- `gh run watch <run-id>`  
+  Stream workflow run progress.
+
+- `gh run rerun <run-id>`  
+  Re-run a failed workflow run.
+
+- `gh workflow list`  
+  List workflows in repository.
+
+- `gh workflow run "<workflow-name>.yml"`  
+  Manually trigger a workflow dispatch.
+
+- `gh release create v1.0.0 --title "v1.0.0" --notes "Release notes"`  
+  Create a GitHub Release from a tag.
+
+- `gh release view v1.0.0`  
+  View release details.
+
+- `gh release list`  
+  List releases.
+
+- `gh repo edit --default-branch main`  
+  Set repository default branch.
+
+- `gh repo edit --delete-branch-on-merge`  
+  Auto-delete branch after PR merge.
+
+- `gh secret set <NAME>`  
+  Create/update repository secret (for Actions, etc.).
+
 ---
 
 Tip: In Git, use `--oneline` (not `--online`) with `git log`.
