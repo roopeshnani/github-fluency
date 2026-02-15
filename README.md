@@ -1,3 +1,3 @@
-This is for learning Git step by step.
+# GitHub Fluency Repo - teammate update
 ## PR practice
 - Created from feature branch
